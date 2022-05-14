@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1>Product</h1>
+	<form th:action="@{/products/edit-product/{id}(id=${product.id})}" th:object="${product}" method="post">
+		<table cellspacing="10" border="0">
+			<tr>
+				<td align="right">Product code:<td> 
+				<td><input type="text" th:field="*{code}" id=""><td>
+			</tr>
+			<tr>
+				<td align="right">Product description:<td> 
+				<td><input type="text" th:field="*{description}" id=""><td>
+			</tr>
+			<tr>
+				<td align="right">Product price:<td> 
+				<td><input type="text" th:field="*{price}" id=""><td>
+			</tr>
+		</table>
+		<button type="submit" style="margin: 10px 50px;">Update product</button>
+	</form>
+	<br>
+	<a th:href="@{/products}" style="margin-left: 50px;">View products</a>
+</body>
+</html>
+		

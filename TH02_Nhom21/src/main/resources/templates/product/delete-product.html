@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1>Delete Product</h1>
+	<form th:action="@{/products/delete-product/{id}(id=${product.id})}" th:object="${product}" method="post">
+		<table cellspacing="10" border="0">
+			<tr>
+				<td align="right">Product code:<td> 
+				<td th:text="*{code}"><td>
+			</tr>
+			<tr>
+				<td align="right">Product description:<td> 
+				<td th:text="*{description}"><td>
+			</tr>
+			<tr>
+				<td align="right">Product price:<td>
+				<td th:text="*{price}"><td> 
+			</tr>
+		</table>	
+		<button style="margin-left: 50px;" name="choose" value="yes" type="submit">Yes</button>
+		<button name="choose" value="no" type="submit">No</button>
+	</form>
+</body>
+</html>
